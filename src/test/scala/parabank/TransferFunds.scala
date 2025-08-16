@@ -18,7 +18,7 @@ class TransferFunds extends Simulation{
       .post("/transfer")
       .queryParam("fromAccountId", fromAccountId)
       .queryParam("toAccountId", toAccountId)
-      .queryParam("amount", amount)
+      .queryParam("amount", amount )
       .check(status.is(200))
       )
 
