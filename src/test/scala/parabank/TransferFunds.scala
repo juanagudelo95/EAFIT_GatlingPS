@@ -14,7 +14,7 @@ class TransferFunds extends Simulation{
 
   // 2 transfer
   val scn = scenario ("Transfer")
-    exec(http("transfer")
+    .exec(http("transfer")
       .post("/transfer")
       .queryParam("fromAccountId", fromAccountId)
       .queryParam("toAccountId", toAccountId)
