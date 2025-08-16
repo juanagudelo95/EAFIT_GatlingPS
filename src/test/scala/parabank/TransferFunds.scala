@@ -19,4 +19,14 @@ class TransferFunds extends Simulation{
       .queryParam("fromAccountId", fromAccountId)
       .queryParam("toAccountId", toAccountId)
       .queryParam("amount", amount)
+      .check(status.is(200))
+      )
+
+   // 3 Load Scenario
+  setUp(
+    scn.inject(rampUsersPerSec(5).to(15).during(30))
+  ).protocols(httpConf);
+}
+
+
 
