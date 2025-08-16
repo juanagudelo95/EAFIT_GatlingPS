@@ -6,8 +6,9 @@ object Data{
     val password = "testtest"
     val fromAccountId = "17229" 
     val toAccountId = "18784"
-    val ammount = "333333"
+    val amount = "333333"
 
 }
+
 
 
