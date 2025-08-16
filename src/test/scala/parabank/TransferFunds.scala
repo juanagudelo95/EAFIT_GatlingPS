@@ -4,7 +4,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import parabank.Data._
 
-class LoginTest extends Simulation{
+class TransferFunds extends Simulation{
 
   // 1 Http Conf
   val httpConf = http.baseUrl(url)
@@ -13,6 +13,10 @@ class LoginTest extends Simulation{
     .check(status.is(200))
 
   // 2 transfer
-  val scn2 = scenario ("Transfer")
+  val scn = scenario ("Transfer")
     exec(http("transfer")
-        .post(s"/transfer/$fromAccountId/$toAccountId/$amount"))
+      .post("/transfer")
+      .queryParam("fromAccountId", fromAccountId)
+      .queryParam("toAccountId", toAccountId)
+      .queryParam("amount", amount)
+
